@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="dashboard.css">
+<title>signup</title>
+<script>
+function validate()
+{
+	var msg="";
+	var name=document.form1.uname.value;
+	var un=new RegExp("^[A-Za-z]{4,}$");
+	var phonen=document.form1.umobile.value;
+	var vn=new RegExp("^[0-9]{10}$");
+	var email=document.form1.uemail.value;
+	var en=new RegExp("[\\w]+.com");
+	var pwd=document.form1.upassword.value;
+	var p=new RegExp("^[\\w]{6,}$");
+	var cpwd=document.form1.ucpassword.value;
+	var cp=new RegExp("^[\\w]{6,}$");
+
+	if(!name.match(un))
+	msg+="name should contain only alphabets\n";
+	if(!phonen.match(vn))
+	msg+="phone number should contain only 10 digits\n";
+	if(!email.match(en))
+	msg+="email should be of form abc@gmail.com\n";
+	if(!pwd.match(p))
+	msg+="password should contain more than 6 characters\n";
+	if(!cpwd.match(pwd))
+	msg+="re-enter the same password as above";
+	if(msg!="")
+	{
+	alert(msg);
+	return false;
+	}
+	document.form1.action="DataStr";
+	return true;
+	}
+</script>
+</head>
+<body>
+<center>
+<form name="form1" method="post" onsubmit="return validate(this)" >
+<table>
+<caption><h2>Sign Up</h2></caption>
+<div class="container">
+<tr>
+<td><input type="text" placeholder="username" name="uname" required></td>
+</tr>
+<tr>
+<td><input type="text" placeholder="mobilenumber" name="umobile" required></td>
+</tr>
+<tr>
+<td><input type="text" placeholder="email" name="uemail" required></td>
+</tr>
+<tr>
+<td><input type="password" placeholder="password" name="upassword" required></td>
+</tr>
+<tr>
+<td><input type="password" placeholder="confirm_password" name="ucpassword" required></td>
+</tr>
+<tr>
+<td><center><button type="submit" >Submit</button></center></td>
+</tr>
+<tr>
+<td>
+<p>Already a member?<a href="login.html">Login</a></p>
+</td>
+</tr>
+</div>
+</table>
+</form>
+</center>
+</body>
+</html>

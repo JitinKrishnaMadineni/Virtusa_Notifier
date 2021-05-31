@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="dashboard.css">
+<style>
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}</style>
+<title>AddNote</title>
+</head>
+<body>
+<center>
+    <div class="imgcontainer">
+      <a href="AddNoteBook.jsp"><span  class="close" title="Close Modal">&times;</span></a>
+      
+    </div>
+
+<form name="formnote"  action="NoteStr" method="post">
+<div class="container">
+<table>
+<caption><h2>ADD NOTE</h2></caption>
+<tr>
+<td colspan="3">
+<label for="nname"><b>NoteName</b></label>
+      <input type="text" placeholder="Notename" name="nname" required>
+      <td>
+</tr>
+<tr>
+<td>
+<label for="nstart"><b>StartDate</b></label>
+      <input type="date" placeholder="yyyy-MM-dd" name="nstart" value="" >
+</td>
+<td>
+<label for="nend"><b>EndDate</b></label>
+      <input type="date" placeholder="yyyy-MM-dd" name="nend" required>
+</td>
+<td>
+<label for="nremainder"><b>RemainderDate</b></label>
+      <input type="date" placeholder="yyyy-MM-dd
+      
+      " name="nremainder" required>
+</td>
+</tr>
+<td colspan="3">
+<label for="nstatus"><b>Status</b></label>
+    <select name="nstatus" required>
+     <option>Started</option>
+     <option>InProgress</option>
+     <option>Completed</option>
+     </select>
+<tr>
+<td colspan="3">
+<label for="ntag"><b>Tag</b></label>
+     <select name="ntag" required>
+     <option>Private</option>
+     <option>Public</option>
+     </select>
+</tr>
+<td colspan="3">
+<label for="ndescription"><b>Description</b></label>
+     <textarea name="ndescription" placeholder="White notes.." rows="5" cols="50"></textarea></td>
+<tr>
+<td colspan="3">
+<button type="submit" name="note" value="note">Submit</button>
+</tr>
+
+</table>
+</div>
+</form>
+</center>
+</body>
+</html>
